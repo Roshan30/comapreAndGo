@@ -1,0 +1,123 @@
+<div class="homepageContainer">
+<div class="homepageHeaderSection">
+    <div class="logoImage">
+        <img src="css/images/logo.png">
+    </div>
+    <div class="tagLineContainer">
+        <h1>Select Places and Compare.....</h1>
+    </div>
+    <div class="searchBoxContainer">
+        <form class="form-horizontal">
+            <fieldset>
+                <div class="form-group">
+                    <!-- <label class="col-sm-3 control-label">With a clear button</label> -->
+                    <div class="col-sm-3">
+                        <div class="uiSelectContainer">
+                            <ui-select ng-model="city.selected" theme="bootstrap" ng-disabled="false">
+                                <ui-select-match placeholder="Select city in the list...">{{$select.selected.name}}</ui-select-match>
+                                <ui-select-choices repeat="city in cities | filter: $select.search">
+                                    <span ng-bind-html="city.name | highlight: $select.search"></span>
+                                    <!-- <small ng-bind-html="city.code | highlight: $select.search"></small> -->
+                                </ui-select-choices>
+                            </ui-select>
+                            <span class="input-group-btn">
+                            <button type="button" ng-click="city.selected = undefined" class="btn btn-default">
+                            <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="uiSelectContainer">
+                            <ui-select ng-model="typeFood_place.selected" theme="bootstrap" ng-disabled="false">
+                                <ui-select-match placeholder="Select tyoe or place..">{{$select.selected.name}}</ui-select-match>
+                                <ui-select-choices repeat="type in typesCuisines | filter: $select.search">
+                                    <span ng-bind-html="type.name | highlight: $select.search"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                            <span class="input-group-btn">
+                            <button type="button" ng-click="typeFood_place.selected = undefined" class="btn btn-default">
+                            <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="uiSelectContainer">
+                            <ui-select ng-model="subArea.selected" theme="bootstrap" ng-disabled="false">
+                                <ui-select-match placeholder="Select area in the city...">{{$select.selected.name}}</ui-select-match>
+                                <ui-select-choices repeat="subArea in subAreas | filter: $select.search">
+                                    <span ng-bind-html="subArea.name | highlight: $select.search"></span>
+                                    <small ng-bind-html="subArea.code | highlight: $select.search"></small>
+                                </ui-select-choices>
+                            </ui-select>
+                            <span class="input-group-btn">
+                            <button type="button" ng-click="subArea.selected = undefined" class="btn btn-default">
+                            <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-primary btn-block">
+                        <span class="glyphicon glyphicon-search"></span> Search
+                        </button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<div class="container popSectionDivClass">
+	<div class="row">
+		<!-- <article class="popSection">
+                <a href="">
+                    <div class="popImage media" >
+                        <img src="css/images/lounge1.jpg" class="media__image" ng-class="modelObj.addClassToImg ?'expandedImg':'compressedImg'">
+                    <div class="popText">
+                        <h4>Popular Dining Restaurant Top 50...</h4>
+                    </div>
+                    <div class="media__body" ng-mouseover="modelObj.expandImage()" ng-mouseleave="modelObj.compressImage()">
+						    <h2>See and Compare Your best choices</h2>
+						    <p>Compare and choose where u wanna have a good time!!!</p>
+				  </div>
+                </a>
+            </article> -->
+            <image-rest-dir image="css/images/restaurant.jpeg"></image-rest-dir>
+            <image-rest-dir image="css/images/lounge2.jpg"></image-rest-dir>
+            <image-rest-dir image="css/images/pub.jpg"></image-rest-dir>
+            </div>
+            <div class="row">
+            <image-rest-dir image="css/images/cafe.jpg"></image-rest-dir>
+            <image-rest-dir image="css/images/lounge1.jpg"></image-rest-dir>
+            <image-rest-dir image="css/images/lounge2.jpg"></image-rest-dir>
+
+	</div>
+</div>
+</div>
+<style type="text/css">
+	div.homepageContainer{
+		position: relative;
+	}
+	div.popImage{
+		height: 100%;
+	}
+	article.popSection{
+		position: relative;
+		height: 350px;
+	}
+	div.popSectionDivClass{
+		position: relative;
+		padding: 30px 0px;
+	}
+		
+	div.popText{
+		position: absolute;
+		bottom: 0px;
+		background-color: rgba(8,8,8,0.40);
+		color: #fff;
+		text-align: center;
+		width: 100%;
+		height: 20%;
+	}
+</style>

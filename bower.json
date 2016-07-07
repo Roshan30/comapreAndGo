@@ -1,0 +1,20 @@
+{
+  "name": "finalProj",
+  "description": "compare",
+  "main": "index.html",
+  "authors": [
+    "RoshanJoshi"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "jquery": "1.9.1 - 2"
+  }
+}
