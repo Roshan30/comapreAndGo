@@ -1,6 +1,6 @@
 angular.module('compareApp.directives', [])
 
-.directive('imageRestDir',function(){
+.directive('imageRestDir',function(CONSTANTS,$http,responseDataFactory,$location){
 	 //define the directive object
    var directive = {};
    
@@ -12,7 +12,10 @@ angular.module('compareApp.directives', [])
    
   // scope is used to distinguish each student element based on criteria.
    directive.scope = {
-      image : "@"
+      image : "@",
+      collection : "@",
+      cityId : "=",
+      subAreaId : "="
    }
    
       //linkFunction is linked with each element with scope to get the element specific data.
@@ -26,8 +29,27 @@ angular.module('compareApp.directives', [])
 	$scope.modelObj.compressImage = function () {
 		$scope.modelObj.addClassToImg = false;
 	}
-      
+ $scope.boxClickFunc = function(){
+              var foodTypeConst =attributes.collection.split(' ').join('_').toUpperCase();
+             var foodTypeCode = CONSTANTS[foodTypeConst];
+             //alert(attributes.subarea);
+             $scope.url = 'data/'+attributes.city+attributes.subarea+foodTypeCode+'.json';
+           console.log($scope.url);
+              $http({
+                       method: 'GET',
+                       url: $scope.url
+                     }).then(function successCallback(response) {
+                       responseDataFactory.resultArr = response.data.restaurants;
+                       $location.path('/compare');
+                     }, function errorCallback(response) {
+                       console.log(response)
+                  });
+            }
+
    }
+   directive.controller = function ($scope, $element, $attrs) {
+           
+        }
    return directive;
 
 })

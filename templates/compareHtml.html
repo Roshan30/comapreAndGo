@@ -1,0 +1,83 @@
+<div class="container">
+	<div class="row">
+		<header class="compare-candidates row">
+		</header>
+		<table class="table" ng-show="tableDataFlag">
+      <tr class="table-active">
+      <th>&nbsp;</th>
+      <th class="cuisineCLass">cuisines</th>
+      <th>average cost for two</th>
+      <th>Rating</th>
+      <th>offers</th>
+      <th>Events</th>
+      <th>Photos</th>
+      <th>Location</th>
+    </tr>
+    <tr class="table-success">
+      <th scope="row" class="hotelName">{{tableArr1.name}}</th>
+      <td class="cuisineCLass">{{tableArr1.cuisines}}</td>
+      <td>{{tableArr1.average_cost_for_two}}</td>
+      <td>{{tableArr1.user_rating.aggregate_rating}}</td>
+      <td>{{tableArr1.offers.length>0 ? tableArr1.offers[0]: ''}}</td>
+      <td>{{tableArr1.events_url}}</td>
+      <td>{{tableArr1.photos_url}}</td>
+      <td>{{tableArr1.location.address}}</td>
+
+    </tr>
+    <tr class="table-danger">
+      <th scope="row" class="hotelName">{{tableArr2.name}}</th>
+       <td class="cuisineCLass">{{tableArr2.cuisines}}</td>
+      <td>{{tableArr2.average_cost_for_two}}</td>
+      <td>{{tableArr2.user_rating.aggregate_rating}}</td>
+      <td>{{tableArr2.offers.length>0 ? tableArr1.offers[0]: ''}}</td>
+      <td>{{tableArr2.events_url}}</td>
+      <td>{{tableArr2.photos_url}}</td>
+      <td>{{tableArr2.location.address}}</td>
+    </tr>
+    <tr class="table-info">
+      <th scope="row"  class="hotelName">{{tableArr3.name}}</th>
+      <td class="cuisineCLass">{{tableArr3.cuisines}}</td>
+      <td>{{tableArr3.average_cost_for_two}}</td>
+      <td>{{tableArr3.user_rating.aggregate_rating}}</td>
+      <td>{{tableArr3.offers.length>0 ? tableArr1.offers[0]: ''}}</td>
+      <td>{{tableArr3.events_url}}</td>
+      <td>{{tableArr3.photos_url}}</td>
+      <td>{{tableArr3.location.address}}</td>
+
+    </tr>
+</table>
+	</div>
+	<div class="row">
+	<div ng-repeat="rest in dataArr">
+        <div class="clearfix" ng-if="$index % 2 == 0"></div>
+		<div class="col-lg-6 col-sm-12 col-md-6 col-xs-12">
+				<div class="row restau-container" ng-mouseover="hoverIn($event)" ng-mouseleave="hoverOut($event)">
+					<div class="overLayHotels" ng-class="hoverEdit? 'hoverEditShow':'hoverEditHide'">
+                                	 <label class="btn btn-primary">
+									    <input type="checkbox" id="{{$index}}" ng-model="model[$index.toString()]" ng-click="stateChanged($event,rest.restaurant)" autocomplete="off" class="selectCheck"> select To Comapre
+									  </label>
+                                </div>
+					<div class="col-lg-3 col-sm-3 col-xs-3">
+						<figure class="article-thumb" data-hover-parents="article">
+                                
+                                <a href="">
+                                    <img src="{{rest.restaurant.thumb}}" class="attachment-grid-feature size-grid-feature wp-post-image">
+                                 </a>
+                            </figure>
+					</div>
+					<div class="col-lg-9 col-sm-9 col-xs-9">
+							<div class="article-content">
+                                <h3 class="article-title" title="{{rest.restaurant.name}}">
+                                   {{rest.restaurant.name| limitTo: 30 }} {{rest.restaurant.name.length < 30 ? '' : '...'}}
+                                </h3>
+                                 <h4 class="type-cuisine">{{rest.restaurant.establishment_types.establishment_type.name}},{{rest.restaurant.cuisines| limitTo: 35 }} {{rest.restaurant.cuisines.length < 35 ? '' : '...'}}</h4>
+                                     <aside>
+                                    <p title="{{rest.restaurant.location.address}}">{{rest.restaurant.location.address| limitTo: 100 }} {{rest.restaurant.location.address.length < 100 ? '' : '...'}}</p>
+                                </aside>
+                            </div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>

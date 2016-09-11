@@ -1,10 +1,10 @@
-<div class="col-md-4 col-xs-12">
+<div class="col-md-4 col-xs-12" ng-click = "boxClickFunc()">
 <article class="popSection">
                 <a href="">
                     <div class="popImage media" >
                         <img src="{{image}}" class="media__image" ng-class="modelObj.addClassToImg ?'expandedImg':'compressedImg'">
                     <div class="popText">
-                        <h4>Popular Dining Restaurant Top 50...</h4>
+                        <h4>{{collection}}</h4>
                     </div>
                     <div class="media__body" ng-mouseover="modelObj.expandImage()" ng-mouseleave="modelObj.compressImage()">
 						    <h2>See and Compare Your best choices</h2>

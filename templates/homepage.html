@@ -1,3 +1,4 @@
+<div class="backstretch" style=""><img  ng-src="https://storage.googleapis.com/zgt-chp-images/Pescado-halfsize.jpg" style=""></div>
 <div class="homepageContainer">
 <div class="homepageHeaderSection">
     <div class="logoImage">
@@ -27,6 +28,22 @@
                             </span>
                         </div>
                     </div>
+                    <div class="col-sm-3">
+                        <div class="uiSelectContainer">
+                            <ui-select ng-model="subArea.selected" theme="bootstrap" ng-disabled="false">
+                                <ui-select-match placeholder="Select area in the city...">{{$select.selected.name}}</ui-select-match>
+                                <ui-select-choices repeat="subArea in subAreas | filter: $select.search">
+                                    <span ng-bind-html="subArea.name | highlight: $select.search"></span>
+                                    <!-- <small ng-bind-html="subArea.code | highlight: $select.search"></small> -->
+                                </ui-select-choices>
+                            </ui-select>
+                            <span class="input-group-btn">
+                            <button type="button" ng-click="subArea.selected = undefined" class="btn btn-default">
+                            <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                            </span>
+                        </div>
+                    </div>
                     <div class="col-sm-4">
                         <div class="uiSelectContainer">
                             <ui-select ng-model="typeFood_place.selected" theme="bootstrap" ng-disabled="false">
@@ -42,24 +59,9 @@
                             </span>
                         </div>
                     </div>
-                    <div class="col-sm-3">
-                        <div class="uiSelectContainer">
-                            <ui-select ng-model="subArea.selected" theme="bootstrap" ng-disabled="false">
-                                <ui-select-match placeholder="Select area in the city...">{{$select.selected.name}}</ui-select-match>
-                                <ui-select-choices repeat="subArea in subAreas | filter: $select.search">
-                                    <span ng-bind-html="subArea.name | highlight: $select.search"></span>
-                                    <small ng-bind-html="subArea.code | highlight: $select.search"></small>
-                                </ui-select-choices>
-                            </ui-select>
-                            <span class="input-group-btn">
-                            <button type="button" ng-click="subArea.selected = undefined" class="btn btn-default">
-                            <span class="glyphicon glyphicon-trash"></span>
-                            </button>
-                            </span>
-                        </div>
-                    </div>
+                    
                     <div class="col-sm-2">
-                        <button type="button" class="btn btn-primary btn-block">
+                        <button type="button" class="btn btn-primary btn-block" ng-click="makeCall();">
                         <span class="glyphicon glyphicon-search"></span> Search
                         </button>
                     </div>
@@ -83,14 +85,14 @@
 				  </div>
                 </a>
             </article> -->
-            <image-rest-dir image="css/images/restaurant.jpeg"></image-rest-dir>
-            <image-rest-dir image="css/images/lounge2.jpg"></image-rest-dir>
-            <image-rest-dir image="css/images/pub.jpg"></image-rest-dir>
+            <image-rest-dir image="css/images/restaurant.jpeg" collection="Dining Restaurants" city="{{cityId}}" subarea = "{{subAreaId}}"></image-rest-dir>
+            <image-rest-dir image="css/images/pub.jpg" collection="Lounges/Sports bar" city="{{cityId}}" subarea = "{{subAreaId}}"></image-rest-dir>
+            <image-rest-dir image="css/images/cafe.jpg" collection="Cafes" city="{{cityId}}" subarea = "{{subAreaId}}"></image-rest-dir>
             </div>
             <div class="row">
-            <image-rest-dir image="css/images/cafe.jpg"></image-rest-dir>
-            <image-rest-dir image="css/images/lounge1.jpg"></image-rest-dir>
-            <image-rest-dir image="css/images/lounge2.jpg"></image-rest-dir>
+            <image-rest-dir image="css/images/lounge2.jpg" collection="Clubs/Discs" city="{{cityId}}" subarea = "{{subAreaId}}"></image-rest-dir>
+            <image-rest-dir image="css/images/lounge1.jpg" collection="Trending Places" city="{{cityId}}" subarea = "{{subAreaId}}"></image-rest-dir>
+            <image-rest-dir image="css/images/lounge2.jpg" collection="Popular In city" city="{{cityId}}" subarea = "{{subAreaId}}"></image-rest-dir>
 
 	</div>
 </div>
@@ -114,8 +116,8 @@
 	div.popText{
 		position: absolute;
 		bottom: 0px;
-		background-color: rgba(8,8,8,0.40);
-		color: #fff;
+		background-color: #f2f2f2;
+		color: #000;
 		text-align: center;
 		width: 100%;
 		height: 20%;
