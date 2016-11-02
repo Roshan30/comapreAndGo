@@ -2,98 +2,58 @@
   "results_found": 2,
   "results_start": 0,
   "results_shown": 2,
-  "restaurants": [
-    {
-      "restaurant": {
-        "R": {
-          "res_id": 11167
-        },
-        "apikey": "9d7321c2b4dd6bae1ecd943b4e444927",
-        "id": "11167",
-        "name": "Mi-a-Mi - JW Marriott Pune",
-        "url": "https://www.zomato.com/pune/mi-a-mi-jw-marriott-pune-senapati-bapat-road?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
-        "location": {
-          "address": "JW Marriott, Senapati Bapat Road, Pune",
-          "locality": "Senapati Bapat Road",
-          "city": "Pune",
-          "city_id": 5,
-          "latitude": "18.5330020000",
-          "longitude": "73.8296060000",
-          "zipcode": "",
-          "country_id": 1
-        },
-        "cuisines": "Finger Food",
-        "average_cost_for_two": 2500,
-        "price_range": 4,
-        "currency": "Rs.",
-        "offers": [],
-        "thumb": "https://b.zmtcdn.com/data/pictures/7/11167/bce3a1a03a2712cf7e45991ca94319e7_featured_v2.jpg",
-        "user_rating": {
-          "aggregate_rating": "4.2",
-          "rating_text": "Very Good",
-          "rating_color": "5BA829",
-          "votes": "1199"
-        },
-        "photos_url": "https://www.zomato.com/pune/mi-a-mi-jw-marriott-pune-senapati-bapat-road/photos#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
-        "menu_url": "https://www.zomato.com/pune/mi-a-mi-jw-marriott-pune-senapati-bapat-road/menu#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
-        "featured_image": "https://b.zmtcdn.com/data/pictures/7/11167/bce3a1a03a2712cf7e45991ca94319e7_featured_v2.jpg",
-        "has_online_delivery": 0,
-        "is_delivering_now": 0,
-        "deeplink": "zomato://r/11167",
-        "events_url": "https://www.zomato.com/pune/mi-a-mi-jw-marriott-pune-senapati-bapat-road/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
-        "establishment_types": {
-          "establishment_type": {
-            "id": "8",
-            "name": "Club"
-          }
-        }
-      }
-    },
-    {
-      "restaurant": {
-        "R": {
-          "res_id": 10742
-        },
-        "apikey": "9d7321c2b4dd6bae1ecd943b4e444927",
-        "id": "10742",
-        "name": "Area 51",
-        "url": "https://www.zomato.com/pune/area-51-baner?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
-        "location": {
-          "address": "Pancard Clubs, Baner Hills, Baner, Pune",
-          "locality": "Baner",
-          "city": "Pune",
-          "city_id": 5,
-          "latitude": "18.5572972283",
-          "longitude": "73.7881325930",
-          "zipcode": "0",
-          "country_id": 1
-        },
-        "cuisines": "Finger Food",
-        "average_cost_for_two": 1800,
-        "price_range": 3,
-        "currency": "Rs.",
-        "offers": [],
-        "thumb": "https://b.zmtcdn.com/data/pictures/2/10742/b4efc6f04d049565977ab172070d7969_featured_v2.jpg",
-        "user_rating": {
-          "aggregate_rating": "3.7",
-          "rating_text": "Good",
-          "rating_color": "9ACD32",
-          "votes": "508"
-        },
-        "photos_url": "https://www.zomato.com/pune/area-51-baner/photos#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
-        "menu_url": "https://www.zomato.com/pune/area-51-baner/menu#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
-        "featured_image": "https://b.zmtcdn.com/data/pictures/2/10742/b4efc6f04d049565977ab172070d7969_featured_v2.jpg",
-        "has_online_delivery": 0,
-        "is_delivering_now": 0,
-        "deeplink": "zomato://r/10742",
-        "events_url": "https://www.zomato.com/pune/area-51-baner/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
-        "establishment_types": {
-          "establishment_type": {
-            "id": "8",
-            "name": "Club"
-          }
-        }
-      }
-    }
-  ]
+  "restaurants": [  
+   {  
+      "name":"Mi-a-Mi - JW Marriott Pune",
+      "restId":111111,
+      "location":{  
+         "address":"JW Marriott, Senapati Bapat Road, Pune",
+         "locality":"Senapati Bapat Road",
+         "city":"Pune",
+         "city_id":5,
+         "latitude":"18.5330020000",
+         "longitude":"73.8296060000",
+         "zipcode":"",
+         "country_id":1
+      },
+      "ambience":"Simple ambience with good music",
+      "foodMenu":"https://www.zomato.com/pune/mi-a-mi-jw-marriott-pune-senapati-bapat-road/menu#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+      "drinksMenu":"https://www.zomato.com/pune/mi-a-mi-jw-marriott-pune-senapati-bapat-road/menu#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+      "happyHpurs":"3.00pm to 5.00pm & 7.00pm to 9.00pm",
+      "offers":"Buy 2 drinks get 1",
+      "costCalc":"1520Rs inclusive all taxes",
+      "ditanceCalc":"5.4 kms approx",
+      "stagCoupleEntry":"stag entry not allowed for Saturday and Friday",
+      "timings":"3.00pm to 11.00pm",
+      "music":"Light DJ Music",
+      "reviews":"url",
+      "popularityLevel":"4.2"
+   },
+   {  
+      "name":"Area 51",
+      "restId":111111,
+      "location":{  
+         "address":"Pancard Clubs, Baner Hills, Baner, Pune",
+         "locality":"Baner",
+         "city":"Pune",
+         "city_id":5,
+         "latitude":"18.5572972283",
+         "longitude":"73.7881325930",
+         "zipcode":"0",
+         "country_id":1
+      },
+      "ambience":"Simple ambience with good music",
+      "foodMenu":"https://www.zomato.com/pune/area-51-baner/menu#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+      "drinksMenu":"https://www.zomato.com/pune/area-51-baner/menu#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+      "happyHpurs":"3.00pm to 5.00pm & 7.00pm to 9.00pm",
+      "offers":"Buy 2 drinks get 1",
+      "costCalc":"1520Rs inclusive all taxes",
+      "ditanceCalc":"5.4 kms approx",
+      "stagCoupleEntry":"stag entry not allowed for Saturday and Friday",
+      "timings":"3.00pm to 11.00pm",
+      "music":"Light DJ Music",
+      "reviews":"url",
+      "popularityLevel":"3.7"
+   }
+]
 }

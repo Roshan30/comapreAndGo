@@ -1,52 +1,304 @@
-<div class="container">
-	<div class="row">
+<div class="compareHotelsClass container">
+	<div class="row comapreTableRowClass">
+   <div class="tagLineContainer">
+        <h1>Compare Before You Regret.....</h1>
+    </div>
+
 		<header class="compare-candidates row">
 		</header>
-		<table class="table" ng-show="tableDataFlag">
-      <tr class="table-active">
-      <th>&nbsp;</th>
-      <th class="cuisineCLass">cuisines</th>
-      <th>average cost for two</th>
-      <th>Rating</th>
-      <th>offers</th>
-      <th>Events</th>
-      <th>Photos</th>
-      <th>Location</th>
-    </tr>
-    <tr class="table-success">
-      <th scope="row" class="hotelName">{{tableArr1.name}}</th>
-      <td class="cuisineCLass">{{tableArr1.cuisines}}</td>
-      <td>{{tableArr1.average_cost_for_two}}</td>
-      <td>{{tableArr1.user_rating.aggregate_rating}}</td>
-      <td>{{tableArr1.offers.length>0 ? tableArr1.offers[0]: ''}}</td>
-      <td>{{tableArr1.events_url}}</td>
-      <td>{{tableArr1.photos_url}}</td>
-      <td>{{tableArr1.location.address}}</td>
-
-    </tr>
-    <tr class="table-danger">
-      <th scope="row" class="hotelName">{{tableArr2.name}}</th>
-       <td class="cuisineCLass">{{tableArr2.cuisines}}</td>
-      <td>{{tableArr2.average_cost_for_two}}</td>
-      <td>{{tableArr2.user_rating.aggregate_rating}}</td>
-      <td>{{tableArr2.offers.length>0 ? tableArr1.offers[0]: ''}}</td>
-      <td>{{tableArr2.events_url}}</td>
-      <td>{{tableArr2.photos_url}}</td>
-      <td>{{tableArr2.location.address}}</td>
-    </tr>
-    <tr class="table-info">
-      <th scope="row"  class="hotelName">{{tableArr3.name}}</th>
-      <td class="cuisineCLass">{{tableArr3.cuisines}}</td>
-      <td>{{tableArr3.average_cost_for_two}}</td>
-      <td>{{tableArr3.user_rating.aggregate_rating}}</td>
-      <td>{{tableArr3.offers.length>0 ? tableArr1.offers[0]: ''}}</td>
-      <td>{{tableArr3.events_url}}</td>
-      <td>{{tableArr3.photos_url}}</td>
-      <td>{{tableArr3.location.address}}</td>
-
-    </tr>
-</table>
+<div class="row"  ng-show="tableDataFlag">
+      <div class="compareTableColumn col-lg-4" ng-class="{'comapreHoverclass':hovering1 && tableArr1.name !== undefined}" ng-mouseenter="hovering1=true" ng-mouseleave="hovering1=false">
+         <ul class="compareListUlClass">
+             <li class="cuisineCLass">
+               <div class="">
+                <ui-select on-select="onSelected($item,'1')" ng-model="city.selected" theme="bootstrap" ng-disabled="false">
+                                <ui-select-match allow-clear="true"  placeholder="type from list...">{{$select.selected.name}}</ui-select-match>
+                                <ui-select-choices repeat="data in dataArr | filter: $select.search">
+                                    <span ng-bind-html="data.name | highlight: $select.search"></span>
+                                    <!-- <small ng-bind-html="city.code | highlight: $select.search"></small> -->
+                                </ui-select-choices>
+                </ui-select>
+              </div>
+                <span class="entityNameSpan">
+                    {{tableArr1.name}}
+                </span>
+                <span ng-show="tableArr1.name !== undefined" class="entityImageSpan">
+                    <img src="css/images/cafe.jpg">
+                </span>
+             </li>
+          <li>{{tableArr1.location.address}}</li>
+          <li><a ng-show="tableArr1.name !== undefined" href="">Ambience</a></li>
+          <li><a ng-show="tableArr1.name !== undefined" href="">Food Menu</a></li>
+          <li><a ng-show="tableArr1.name !== undefined" href="">Drinks Menu</a></li>
+          <li>{{tableArr1.happyHpurs}}</li>
+          <li>{{tableArr1.offers}}</li>
+          <li>{{tableArr1.stagCoupleEntry}}</li>
+          <li>{{tableArr1.music}}</li>
+          <li><span  ng-show="tableArr1.name !== undefined">Distance:-{{tableArr1.distanceCalc}}approx. <br/>Time:-{{tableArr1.durationCalc}}Approx.</span></li>
+          <li>{{tableArr1.costCalc}}</li>
+          <li>{{tableArr1.timings}}</li>
+          <li>{{tableArr1.timings}}</li>
+          <li>{{tableArr1.reviews}}</li>
+          <li>{{tableArr1.popularityLevel}}</li>
+          </ul>
+      </div>
+      <div class="compareTableColumn col-lg-4" ng-class="{'comapreHoverclass':hovering2 && tableArr2.name !== undefined}" ng-mouseenter="hovering2=true" ng-mouseleave="hovering2=false">
+          <ul class="compareListUlClass">
+             <li class="cuisineCLass">
+                <span class="entityNameSpan">
+                    {{tableArr2.name}}
+                </span>
+                <span ng-show="tableArr2.name !== undefined" class="entityImageSpan">
+                    <img src="css/images/cafe.jpg">
+                </span>
+             </li>
+          <li>{{tableArr2.location.address}}</li>
+          <li><a ng-show="tableArr2.name !== undefined" href="">Ambience</a></li>
+          <li><a ng-show="tableArr2.name !== undefined" href="">Food Menu</a></li>
+          <li><a ng-show="tableArr2.name !== undefined" href="">Drinks Menu</a></li>
+          <li>{{tableArr2.happyHpurs}}</li>
+          <li>{{tableArr2.offers}}</li>
+          <li>{{tableArr2.stagCoupleEntry}}</li>
+          <li>{{tableArr2.music}}</li>
+          <li><span  ng-show="tableArr2.name !== undefined">Distance:-{{tableArr2.distanceCalc}}approx. <br/>Time:-{{tableArr2.durationCalc}}Approx.</span></li>
+          <li>{{tableArr2.costCalc}}</li>
+          <li>{{tableArr2.timings}}</li>
+          <li>{{tableArr2.timings}}</li>
+          <li>{{tableArr2.reviews}}</li>
+          <li>{{tableArr2.popularityLevel}}</li>
+          </ul>
+      </div>
+      <div class="compareTableColumn col-lg-4" ng-class="{'comapreHoverclass':hovering3 && tableArr3.name !== undefined}" ng-mouseenter="hovering3=true" ng-mouseleave="hovering3=false">
+          <ul class="compareListUlClass">
+             <li class="cuisineCLass">
+                <span class="entityNameSpan">
+                    {{tableArr3.name}}
+                </span>
+                <span ng-show="tableArr3.name !== undefined" class="entityImageSpan">
+                    <img src="css/images/cafe.jpg">
+                </span>
+             </li>
+          <li>{{tableArr3.location.address}}</li>
+          <li><a ng-show="tableArr3.name !== undefined" href="">Ambience</a></li>
+          <li><a ng-show="tableArr3.name !== undefined" href="">Food Menu</a></li>
+          <li><a ng-show="tableArr3.name !== undefined" href="">Drinks Menu</a></li>
+          <li>{{tableArr3.happyHpurs}}</li>
+          <li>{{tableArr3.offers}}</li>
+          <li>{{tableArr3.stagCoupleEntry}}</li>
+          <li>{{tableArr3.music}}</li>
+          <li><span  ng-show="tableArr3.name !== undefined">Distance:-{{tableArr3.distanceCalc}}approx. <br/>Time:-{{tableArr3.durationCalc}}Approx.</span></li>
+          <li>{{tableArr3.costCalc}}</li>
+          <li>{{tableArr3.timings}}</li>
+          <li>{{tableArr3.timings}}</li>
+          <li>{{tableArr3.reviews}}</li>
+          <li>{{tableArr3.popularityLevel}}</li>
+          </ul>
+      </div>
+  </div>
 	</div>
+   <div class="catalog">
+  <nav id="filterNavigation" class="closed">
+    <ul id="catalogFilters">
+      <li class="filterSubMenu toggle-closed areaClassCol"  id="filterSortBy">
+        <a class="toggle toggle-closed"  ng-click="toggleOpenFilter($event);">
+          Areas<span ng-show="noOfArea">&nbsp;({{areaSelectedNo}})</span>
+          <span>&nbsp;</span>
+        </a>
+        <div class="filterParamsBy closed">
+          <ul class="thisFilterGroup">
+            <li>
+              <span class="selectParamsCheck" >
+                <input type="checkbox" name="checkbox" id="checkboxArea1" value="value" class data-areacode = '1' ng-model = 'model.area.area1'  >
+                  <label for="checkboxArea1" class="checkboxLabel">Wakad</label> 
+              </span>
+              </li>
+              <li>
+                <span class="selectParamsCheck">
+                <input type="checkbox" name="checkbox" id="checkboxArea2" value="value" class="" ng-model = 'model.area.area2' data-areacode = '2'>
+                  <label for="checkboxArea2"  class="checkboxLabel">Viman Nagar</label> 
+              </span>
+                <li>
+                  <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxArea3" value="value" class=""  data-areacode = '3' ng-model = 'model.area.area3'>
+                    <label for="checkboxArea3"  class="checkboxLabel">KP</label> 
+                  </span>
+                </li>
+                <li>
+                  <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxArea4" value="value" class=""  data-areacode = '4' ng-model = 'model.area.area4'>
+                    <label for="checkboxArea4"  class="checkboxLabel">Kalyani Nagar</label> 
+                  </span>
+                </li>
+                </ul>
+              </div>
+            </li>
+            <li class="filterSubMenu toggle-closed" id="filterPointRange" data-typecode='1'>
+              <a class="toggle toggle-closed"  ng-click="toggleOpenFilter($event);">Bars
+                <span>&nbsp;</span>
+                <span ng-show="type1Flag">&nbsp;({{type1SelectedNo}})</span>
+              </a>
+              <div class="filterParamsBy filterPointRange closed filterTransition">
+                <ul class="thisFilterGroup">
+                  <li>
+              <span class="selectParamsCheck">
+                <input type="checkbox" name="checkbox" id="checkboxtype31" value="value" class="" ng-model='model.type1.subType1'>
+                  <label for="checkboxtype31"  class="checkboxLabel">100 to 200</label> 
+              </span>
+              </li>
+              <li>
+                <span class="selectParamsCheck">
+                <input type="checkbox" name="checkbox" id="checkboxtype32" value="value" class="" ng-model='model.type1.subType2'>
+                  <label for="checkboxtype32"  class="checkboxLabel">200 to 300</label> 
+              </span>
+                <li>
+                  <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxtype33" value="value" class="" ng-model='model.type1.subType3'>
+                    <label for="checkboxtype33"  class="checkboxLabel">300+</label> 
+                  </span>
+                </li>
+
+                <li>
+                <hr/>
+                  <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxtype1Remove" value="value" class="removeBtn" ng-model='model.type1.removeAll'  ng-click='removeAlltype(model.type1)'>
+                    <label for="checkboxtype1Remove"  class="checkboxLabel">Remove</label> 
+                  </span>
+                </li>
+                </ul>
+              </div>
+            </li>
+            <li class="filterSubMenu toggle-closed" id="filterCategory">
+              <a class="toggle-closed toggle"  ng-click="toggleOpenFilter($event);">
+                Category<span>&nbsp;</span>
+              </a>
+              <div class="filterParamsBy filterCategory closed filterTransition">
+                <ul class="thisFilterGroup ">
+                  <li>
+                    <div class="closed filterTransition">
+                      <a href="/rewards/back-to-school-N79?view=flat">
+                        Back to School&nbsp;(1)
+                      </a>
+                      <a href="/rewards/coca-cola-brands-N57?view=flat">
+                        Coca-Cola Brands&nbsp;(14)
+                      </a>
+                      <a href="/rewards/donations-N4?view=flat">
+                        Donations&nbsp;(7)
+                      </a>
+                    </div>  
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="filterSubMenu toggle-closed" id="filterBrands" data-typecode='3'>
+              <a class="toggle-closed toggle"  ng-click="toggleOpenFilter($event);">
+                Cafe<span>&nbsp;</span>
+                <span ng-show="type3Flag">&nbsp;({{type3SelectedNo}})</span>
+              </a>
+              <div class="filterParamsBy closed filterTransition">
+                <ul class="thisFilterGroup">
+                  <li>
+                    <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxtype31" value="value" class=""   ng-model = 'model.type3.subType1'>
+                    <label for="checkboxtype31"  class="checkboxLabel">Coffee bars</label> 
+                  </span>
+                    <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxtype32" value="value" class=""   ng-model = 'model.type3.subType2'>
+                    <label for="checkboxtype32"  class="checkboxLabel">Ice cream Parlours</label> 
+                  </span>
+                  <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxtype33" value="value" class=""  ng-model = 'model.type3.subType3'>
+                    <label for="checkboxtype33"  class="checkboxLabel">Deserts</label> 
+                  </span>
+                  <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxtype34" value="value" class=""   ng-model = 'model.type3.subType4'>
+                    <label for="checkboxtype34"  class="checkboxLabel">Misc</label> 
+                  </span>
+                  </li>
+                  <li>
+                <hr/>
+                  <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxtype3Remove"  ng-click='removeAlltype(model.type3)'  value="value" class="removeBtn" ng-model='model.type3.removeAll'>
+                    <label for="checkboxtype3Remove" class="checkboxLabel">Remove</label> 
+                  </span>
+                </li>
+                </ul>
+              </div>
+            </li>
+            <li class="filterSubMenu toggle-closed" id="filterBrands" data-typecode='4'>
+              <a class="toggle-closed toggle"  ng-click="toggleOpenFilter($event);">
+                Clubs<span>&nbsp;</span>
+                <span ng-show="type4Flag">&nbsp;({{type4SelectedNo}})</span>
+              </a>
+              <div class="filterParamsBy closed filterTransition">
+                <ul class="thisFilterGroup">
+                  <li>
+                    <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxtype41" value="value" class=""   ng-model = 'model.type4.subType1'>
+                    <label for="checkboxtype41"  class="checkboxLabel">Couples Free</label> 
+                  </span>
+                    <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxtype42" value="value" class=""   ng-model = 'model.type4.subType2'>
+                    <label for="checkboxtype42"  class="checkboxLabel">) - 500</label> 
+                  </span>
+                  <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxtype43" value="value" class=""  ng-model = 'model.type4.subType3'>
+                    <label for="checkboxtype44"  class="checkboxLabel">500 - 100</label> 
+                  </span>
+                  <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxArea4" value="value" class=""   ng-model = 'model.type4.subType4'>
+                    <label for="checkboxArea4"  class="checkboxLabel">1000+</label> 
+                  </span>
+                  </li>
+                  <li>
+                <hr/>
+                  <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxtype4Remove" value="value" class="removeBtn" ng-model='model.type4.removeAll' ng-click='removeAlltype(model.type4)' >
+                    <label for="checkboxtype4Remove"  class="checkboxLabel">Remove</label> 
+                  </span>
+                </li>
+                </ul>
+              </div>
+            </li>
+            <li class="filterSubMenu toggle-closed" id="filterBrands" data-typecode='5'>
+              <a class="toggle-closed toggle"  ng-click="toggleOpenFilter($event);">
+                Lounges<span>&nbsp;</span>
+                <span ng-show="type5Flag">&nbsp;({{type5SelectedNo}})</span>
+              </a>
+              <div class="filterParamsBy closed filterTransition">
+                <ul class="thisFilterGroup">
+                  <li>
+                    <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxtype51" value="value" class=""   ng-model = 'model.type5.subType1'>
+                    <label for="checkboxtype51"  class="checkboxLabel">Rooftop</label> 
+                  </span>
+                    <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxtype52" value="value" class=""   ng-model = 'model.type5.subType2'>
+                    <label for="checkboxtype52"  class="checkboxLabel">100-150</label> 
+                  </span>
+                  <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxtype53" value="value" class=""  ng-model = 'model.type5.subType3'>
+                    <label for="checkboxtype53"  class="checkboxLabel">150-200</label> 
+                  </span>
+                  <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxtype54" value="value" class=""   ng-model = 'model.type5.subType4'>
+                    <label for="checkboxtype54"  class="checkboxLabel">200+</label> 
+                  </span>
+                  </li>
+                  <li>
+                <hr/>
+                  <span class="selectParamsCheck">
+                    <input type="checkbox" name="checkbox" id="checkboxtype5Remove" value="value"  ng-click='removeAlltype(model.type5)' class="removeBtn" ng-model='model.type3.removeAll'>
+                    <label for="checkboxtype5Remove"  class="checkboxLabel">Remove</label> 
+                  </span>
+                </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    <button class="btn btn-primary modifySearchBtn" ng-click="modifySeachClickFn();">Search</button>
 	<div class="row">
 	<div ng-repeat="rest in dataArr">
         <div class="clearfix" ng-if="$index % 2 == 0"></div>
@@ -54,30 +306,56 @@
 				<div class="row restau-container" ng-mouseover="hoverIn($event)" ng-mouseleave="hoverOut($event)">
 					<div class="overLayHotels" ng-class="hoverEdit? 'hoverEditShow':'hoverEditHide'">
                                 	 <label class="btn btn-primary">
-									    <input type="checkbox" id="{{$index}}" ng-model="model[$index.toString()]" ng-click="stateChanged($event,rest.restaurant)" autocomplete="off" class="selectCheck"> select To Comapre
+									    <input type="checkbox" id="{{$index}}" ng-model="model[$index.toString()]" ng-click="stateChanged($event,rest)" autocomplete="off" class="selectCheck"> select To Comapre
 									  </label>
                                 </div>
 					<div class="col-lg-3 col-sm-3 col-xs-3">
 						<figure class="article-thumb" data-hover-parents="article">
                                 
                                 <a href="">
-                                    <img src="{{rest.restaurant.thumb}}" class="attachment-grid-feature size-grid-feature wp-post-image">
+                                    <img src="{{rest.ambience[0]}}" class="attachment-grid-feature size-grid-feature wp-post-image">
                                  </a>
                             </figure>
 					</div>
 					<div class="col-lg-9 col-sm-9 col-xs-9">
 							<div class="article-content">
-                                <h3 class="article-title" title="{{rest.restaurant.name}}">
-                                   {{rest.restaurant.name| limitTo: 30 }} {{rest.restaurant.name.length < 30 ? '' : '...'}}
+                                <h3 class="article-title" title="{{rest.name}}">
+                                   {{rest.name| limitTo: 25 }} {{rest.name.length < 30 ? '' : '...'}}
                                 </h3>
-                                 <h4 class="type-cuisine">{{rest.restaurant.establishment_types.establishment_type.name}},{{rest.restaurant.cuisines| limitTo: 35 }} {{rest.restaurant.cuisines.length < 35 ? '' : '...'}}</h4>
                                      <aside>
-                                    <p title="{{rest.restaurant.location.address}}">{{rest.restaurant.location.address| limitTo: 100 }} {{rest.restaurant.location.address.length < 100 ? '' : '...'}}</p>
+                                    <p title="{{rest.location.address}}">{{rest.location.address| limitTo: 100 }} {{rest.location.address.length < 70 ? '' : '...'}}</p>
                                 </aside>
                             </div>
 					</div>
 				</div>
 			</div>
 		</div>	
+
+
+
+
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Drinks Menu</h4>
+            </div>
+            <div class="modal-body">
+                    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                      <div uib-slide ng-repeat="slide in slides track by $index" index="$index">
+                        <img ng-src="{{slide.image}}" style="margin:auto;">
+                        <div class="carousel-caption">
+                          <h4>Slide {{slide.id}}</h4>
+                          <p>{{slide.text}}</p>
+                        </div>
+                      </div>
+            </div>
+            <div class="modal-footer">
+             
+            </div>
+          </div>
+        </div>
+      </div>
 	</div>
 </div>

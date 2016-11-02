@@ -52,4 +52,29 @@ angular.module('compareApp.directives', [])
         }
    return directive;
 
+}).directive('searchGuiFilterDir',function(responseDataFactory){
+
+     //define the directive object
+   var directive = {};
+   
+   //restrict = E, signifies that directive is Element directive
+   directive.restrict = 'E';
+   
+   //template replaces the complete element with its text. 
+   directive.templateUrl = "templates/sortTableGUI.html";
+   
+  // scope is used to distinguish each student element based on criteria.
+   directive.scope = {
+   }
+   
+      //linkFunction is linked with each element with scope to get the element specific data.
+      directive.link = function($scope, element, attributes) {
+          
+
+   }
+   directive.controller = function ($scope, $element, $attrs) {
+               
+              
+        }
+   return directive;
 })

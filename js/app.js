@@ -1,12 +1,17 @@
 angular.
-  module('compareApp',['ui.router','compareApp.controllers','ngSanitize','ui.select','compareApp.directives','comapreApp.services','comapreApp.constants'])
+  module('compareApp',['ui.router','ngAnimate','compareApp.controllers','ngSanitize','ui.select','compareApp.directives','comapreApp.services','comapreApp.constants','ui.bootstrap'])
   .config(function($stateProvider, $urlRouterProvider) {
   //
   // For any unmatched url, redirect to /state1
-  $urlRouterProvider.otherwise("/homepage");
+  $urlRouterProvider.otherwise("/landing");
   //
   // Now set up the states
   $stateProvider
+  .state('landing', {
+      url: "/landing",
+      templateUrl: "templates/landing.html",
+      controller: 'landingPageCtrl'
+    })
     .state('homepage', {
       url: "/homepage",
       templateUrl: "templates/homepage.html",
