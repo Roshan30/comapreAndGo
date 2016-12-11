@@ -1,17 +1,26 @@
 angular.module('compareApp.controllers', [])
 .controller('landingPageCtrl', function($scope ,$location) {
-      $('#fullpage').fullpage({
-        // sectionsColor: ['#776fce', '#4BBFC3', '#7BAABE', 'whitesmoke'],
-        fitToSection: 'true',
-        controlArrows:false
-      });
+  if (typeof $.fn.fullpage.destroy == 'function') { 
+    $.fn.fullpage.destroy('all');
+}
+     setTimeout(function(){
+       $('#fullpage').fullpage({
+            //sectionsColor: ['#776fce', '#4BBFC3', '#7BAABE', 'whitesmoke'],
+            fitToSection: 'true',
+            controlArrows:false
+          });
+  }, 0);
+
       $scope.goToFoodieSection = function (){
-          alert('hii');
-        //$location.path('/homepage');
+          
+        $location.path('/homepage');
       }
       
 })
 .controller('homepageCtrl', function($scope, $http, $interval, $timeout, GeolocationService, responseDataFactory,$location) {
+  if (typeof $.fn.fullpage.destroy == 'function') { 
+    $.fn.fullpage.destroy('all');
+}
    $scope.cityId = '0';
 $scope.subAreaId = '0';
 $scope.typeFoodId ='0';

@@ -8,9 +8,7 @@
 		</header>
 <div class="row"  ng-show="tableDataFlag">
       <div class="compareTableColumn col-lg-4" ng-class="{'comapreHoverclass':hovering1 && tableArr1.name !== undefined}" ng-mouseenter="hovering1=true" ng-mouseleave="hovering1=false">
-         <ul class="compareListUlClass">
-             <li class="cuisineCLass">
-               <div class="">
+          <div class="">
                 <ui-select on-select="onSelected($item,'1')" ng-model="city.selected" theme="bootstrap" ng-disabled="false">
                                 <ui-select-match allow-clear="true"  placeholder="type from list...">{{$select.selected.name}}</ui-select-match>
                                 <ui-select-choices repeat="data in dataArr | filter: $select.search">
@@ -19,6 +17,9 @@
                                 </ui-select-choices>
                 </ui-select>
               </div>
+         <ul class="compareListUlClass">
+             <li class="cuisineCLass">
+             
                 <span class="entityNameSpan">
                     {{tableArr1.name}}
                 </span>
@@ -43,8 +44,18 @@
           </ul>
       </div>
       <div class="compareTableColumn col-lg-4" ng-class="{'comapreHoverclass':hovering2 && tableArr2.name !== undefined}" ng-mouseenter="hovering2=true" ng-mouseleave="hovering2=false">
+          <div class="">
+                <ui-select on-select="onSelected($item,'1')" ng-model="city.selected" theme="bootstrap" ng-disabled="false">
+                                <ui-select-match allow-clear="true"  placeholder="type from list...">{{$select.selected.name}}</ui-select-match>
+                                <ui-select-choices repeat="data in dataArr | filter: $select.search">
+                                    <span ng-bind-html="data.name | highlight: $select.search"></span>
+                                    <!-- <small ng-bind-html="city.code | highlight: $select.search"></small> -->
+                                </ui-select-choices>
+                </ui-select>
+              </div>
           <ul class="compareListUlClass">
              <li class="cuisineCLass">
+             
                 <span class="entityNameSpan">
                     {{tableArr2.name}}
                 </span>
@@ -69,6 +80,15 @@
           </ul>
       </div>
       <div class="compareTableColumn col-lg-4" ng-class="{'comapreHoverclass':hovering3 && tableArr3.name !== undefined}" ng-mouseenter="hovering3=true" ng-mouseleave="hovering3=false">
+          <div class="">
+                <ui-select on-select="onSelected($item,'1')" ng-model="city.selected" theme="bootstrap" ng-disabled="false">
+                                <ui-select-match allow-clear="true"  placeholder="type from list...">{{$select.selected.name}}</ui-select-match>
+                                <ui-select-choices repeat="data in dataArr | filter: $select.search">
+                                    <span ng-bind-html="data.name | highlight: $select.search"></span>
+                                    <!-- <small ng-bind-html="city.code | highlight: $select.search"></small> -->
+                                </ui-select-choices>
+                </ui-select>
+              </div>
           <ul class="compareListUlClass">
              <li class="cuisineCLass">
                 <span class="entityNameSpan">

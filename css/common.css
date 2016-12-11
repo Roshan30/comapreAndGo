@@ -1,3 +1,8 @@
+@font-face{
+ font-family:'digital-clock-font';
+ src: url('fonts/digitalItalic.ttf');
+}
+
 body{
 background: #eaebeb;
 }
@@ -37,7 +42,7 @@ nav.navbar{
 #fullpage .domainCollectorClass .row>div.col-lg-4{
   padding: 40px 5px 0px 5px;
 }
-#fullpage .domainCollectorClass .row>div.col-lg-4>div:hover{
+#fullpage .domainCollectorClass .row>div.col-lg-4 div.domainContainer:hover{
   /*border:1px solid #000;*/
   border:3px solid #fff;
 }
@@ -187,10 +192,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   height: 75% !important;
 }
 .sectionThreeClass .col-lg-4 .statNumber{
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'digital-clock-font', sans-serif;
             text-align: center;
     height: 100px;
-    color: #fff;
+    color: #2aff29;
     font-size: 60px;
         text-shadow: 5px 5px 5px #000;
 }
